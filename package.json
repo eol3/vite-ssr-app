@@ -1,0 +1,25 @@
+{
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "dev:server": "node server-dev.js",
+    "build": "npm run build:client && npm run build:server",
+    "build:ori": "vite build",
+    "serve": "vite preview",
+    "build:client": "vite build --ssrManifest --outDir dist/client",
+    "build:server": "vite build --outDir dist/server --ssr src/entry-server.js ",
+    "start": "node server.js",
+    "generate": "vite build --ssrManifest --outDir dist/static && npm run build:server && node prerender"
+  },
+  "dependencies": {
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.10"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.1.5",
+    "@vue/server-renderer": "^3.1.4",
+    "express": "^4.17.1",
+    "vite": "^2.4.2"
+  }
+}
